@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+
+            <template id="patient_report">
+                <t t-call="web.html_container">
+                    <t t-foreach="docs" t-as="p">
+                        <t t-call="web.external_layout">
+                            <div class="page" style="padding:10%">
+
+                                <div class="row">
+                                        <div class="col">
+                                                <h1 class="text-danger">Patient Status Report</h1>
+                                        </div>
+
+                                        <div class="col">
+                                      <img t-attf-src="data:image/*;base64,{{p.image}}"    t-att-alt="None"  style="height:150px; width:150px; border-radius:50%;" />
+
+                                        </div>
+                                </div>
+                               <br/> <br/>
+                                 <div class="row">
+                                     <div class="col">
+                                        <h3><strong>Name:</strong><span t-field="p.first"/> <span t-field="p.last"/></h3>
+                                        <h3><strong> Age:</strong><span t-field="p.age"/></h3>
+                                        <h3><strong>Department:</strong><span t-field="p.department_id"/></h3>
+                                        <h3><strong>Doctors:</strong><span t-field="p.doctor_id"/></h3>
+                                     </div>
+                                         <div class="col">
+                                             <h3><strong>Birthdate: </strong><span t-field="p.birth"/></h3>
+                                             <h3><strong>PCR:  </strong><span t-field="p.pcr"/></h3>
+                                             <h3><strong>Blood type: </strong><span t-field="p.blood_type"/></h3>
+                                             <h3><strong>Email:  </strong><span t-field="p.email"/></h3>
+
+                                         </div>
+                                 </div>
+                                <br/><br/>
+                                <div class="row">
+                                    <div class="col">
+                                     <h3 class="text-danger text-center"  > Log History</h3>
+                                    </div>
+                                    <table class="table table-info table-striped table-bordered ">
+                                        <tr>
+                                            <th>User</th>
+                                            <th>Date</th>
+                                            <th>Info</th>
+                                        </tr>
+                                        <tr>
+                                            <td>User 1 </td>
+                                            <td> </td>
+                                            <td> </td>
+                                        </tr>
+                                          <tr>
+                                            <td> User 2</td>
+                                            <td> </td>
+                                            <td> </td>
+                                        </tr>
+                                          <tr>
+                                            <td> User 3</td>
+                                            <td> </td>
+                                            <td> </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </t>
+
+                    </t>
+
+                </t>
+            </template>
+
+    </data>
+</odoo>
+
+
+
+
+
+
+
+

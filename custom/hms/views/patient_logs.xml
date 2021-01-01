@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+           <record id="log_form_view" model="ir.ui.view">
+            <field name="name">Log Form View</field>
+            <field name="model">log.record</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Logs info">
+                            <field name="patient_id"/>
+                            <field name="description"  />
+                            </group>
+                     </sheet>
+                    </form>
+            </field>
+            </record>
+
+           <record id="logs_tree_view" model="ir.ui.view">
+            <field name="name">Logs Tree View</field>
+            <field name="model">log.record</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="patient_id"/>
+                    <field name="date"/>
+
+                    <field name="description"/>
+                    </tree>
+                </field>
+            </record>
+
+
+        <record id="log_action" model="ir.actions.act_window">
+            <field name="name">Logs</field>
+            <field name="res_model">log.record</field>
+
+        </record>
+
+
+        <menuitem id="hospital_id" name="hms"/>
+
+        <menuitem id="log_id" parent="hospital_id" name="logs"
+        action="log_action"/>
+
+    </data>
+
+</odoo>
